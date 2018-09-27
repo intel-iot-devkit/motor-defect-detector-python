@@ -1,4 +1,13 @@
-# Motor Fault Detector
+# Motor Defect Detector
+
+
+| Details            |                 |
+|-----------------------|------------------|
+| Target OS:            |  Ubuntu\* 16.04 LTS     |
+| Programming Language  |  Python |
+| Time to complete:     |  30 min      |
+
+
 ## What it Does
 The monitoring of manufacturing equipment is vital to any industrial process. Sometimes it is critical that equipment be monitored in real-time for faults and anomalies to prevent damage and correlate equipment behavior faults to production line issues. Fault detection is the pre-cursor to predictive maintenance.
 
