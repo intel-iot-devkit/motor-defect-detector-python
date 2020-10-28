@@ -21,8 +21,8 @@ def reshapelist(lst):
 
 try:
     # user input for the path of the dataset
-    filedir = input("enter the complete directory path ")
-    filepath = input("enter the folder name")
+    filedir = input("enter the complete directory path to 1st_test/2nd_test ")
+    filepath = input("enter the folder name 1st_test/2nd_test: ")
 
     #load the files
     all_files = os.listdir(filedir)

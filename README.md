@@ -23,11 +23,12 @@ There are several methods which don&#39;t require training of a neural network t
 ### Software Requirements
 - Ubuntu* 16.04
 - Python 3.5 with the following libraries: 
-  * numpy
-  * pandas
-  * matplotlib.pyplot
-  * sklearn
-  * scipy
+  * numpy:1.14.0
+  * pandas:0.22.0
+  * matplotlib.pyplot:2.1.2
+  * sklearn:0.19.1
+  * scipy:1.1.0
+  * python-setup tools
 
 ## Setup
 
@@ -35,11 +36,11 @@ There are several methods which don&#39;t require training of a neural network t
 2. Extract the zip format of data into respective folder named 1st\_test/2nd\_test.
 3. Make sure you have the following libraries:
 
-   * numpy
-   * pandas
-   * matplotlib.pyplot
-   * sklearn
-   * scipy
+  * numpy:1.14.0
+  * pandas:0.22.0
+  * matplotlib.pyplot:2.1.2
+  * sklearn:0.19.1
+  * scipy:1.1.0
 
 4. Download the code.
 5. Make sure all the code and data are in one directory.
@@ -97,6 +98,18 @@ For all the samples the basic approach is same. Following are the steps that are
 
 **For FFT** : Gives the frequency vs time plot of each maximum frequency for each dataset.
 
+- Copy the dataset to FFT/<br />
+    cd path_to_FFT <br />
+    cp -r path_to_1st_test .<br />
+    cp -r path_to_2nd_test .<br />
+
+- Execute FreqTime.py<br />
+    python3 FreqTime.py<br />
+    <br />
+    enter the complete directory path to 1st_test/2nd_test: <I>path_to_FFT/1st_test/</I><br />
+    enter the folder name 1st_test/2nd_test: <I>1st_test/</I><br />
+    enter the max type in range 1-5 <I>value_from_1_to_5</I><br />
+
 ![Figure 1](./images/FFT/testset2/max2.jpg)  
 *Figure 1. Plot for the testset2, max2 frequency for all the bearing.*
 
@@ -105,6 +118,23 @@ For all the samples the basic approach is same. Following are the steps that are
 Calculate the label for the data frame (in depended variable). Assume that first 70% is in normal condition and rest 71-100% are suspected to fail. For the passed one give label &#39;0&#39; and for suspected to fail give label &#39;1&#39;. Train the logistic regression on result data frame. Stored the model using numpy.
 
 For testing: Take the input path from the user, to check which bearing is suspected to fail and which is in normal condition. Check the number of one label, and number of zero label in the last 100 predictions. If the number of one prediction is more than the number of zero label, then the bearing is suspected to fail. Otherwise, it is in normal condition.
+
+- Copy the dataset to Logistic_Regression/<br />
+    cd path_to_Logistic_Regression<br />
+    cp -r path_to_1st_test .<br />
+    cp -r path_to_2nd_test .<br />
+
+- Train Logistic regression:<br />
+    python3 LogisticRegressionTraining.py <br />
+    <br />
+    enter the complete directory path for the testset1 <I>path_to_Logistic_Regression/1st_test/</I><br />
+    enter the complete directory path for the testset2 <I>path_to_Logistic_Regression/2nd_test/</I><br />
+
+- Test the model<br />
+    python3 logisticregressiontesting.py <br />
+    <br />
+    enter the complete directory path <I>path_to_Logistic_Regression/1st_test/</I><br />
+    enter the folder name <I>1st_test/</I><br />
 
  ![Figure 2](./images/LogisticRegression/testset2_figure.jpg)  
  *Figure 2. Predicted last 100  labels for testset2, for all four bearings*
@@ -119,6 +149,23 @@ Fit the result data frame into Kmeans cluster, grouping into 8 cluster(number is
 
 For testing, take input path from the user, to check which bearing is suspected to fail and which is in normal condition. Calculate the number of label 5, 6, 7 for the last 100 predictions. If this is greater than 25, then it is suspected to fail. Otherwise, this is in normal condition.
 
+- Copy the dataset to Kmeans/<br />
+    cd path_to_Kmeans<br />
+    cp -r path_to_1st_test .<br />
+    cp -r path_to_2nd_test .<br />
+
+- Train Kmeans<br />
+    python3 kmeanstrainingall.py<br />
+    <br />
+    enter the complete directory path for the testset1 <I>path_to_Kmeans/1st_test/</I><br />
+    enter the complete directory path for the testset2 <I>path_to_Kmeans/2nd_test/</I><br />
+
+- Test the model<br />
+    python3 kmeanstestingall.py <br />
+    <br />
+    enter the complete directory path <I>path_to_Kmeans/1st_test/</I><br />
+    enter the folder name <I>1st_test/</I><br />
+
 ![Figure 4](./images/Kmeans/testset2_figure.jpg)  
  *Figure 4. Predicted last 100 labels for testset2, for all four bearings using the Kmeans clustering*
 
@@ -130,6 +177,23 @@ For testing, take input path from the user, to check which bearing is suspected 
 Fit the result data frame into gmm model, grouping into 3 components (components depicts no of clusters). Save the trained model as GMM using numpy.
 
 For the testing, take the input path from the user, to check which bearing is suspected to fail and which is in normal condition. Calculate the number of label 2 for the last 100 predictions. If this is greater than 50 then it is suspected to fail. Otherwise this is in normal condition.
+
+- Copy the dataset to GMM/<br />
+    cd path_to_GMM<br />
+    cp -r path_to_1st_test .<br />
+    cp -r path_to_2nd_test .<br />
+
+- Train GMM<br />
+    python3 GMM_train.py <br />
+    <br />
+    enter the complete directory path for the testset1 <I>path_to_GMM/1st_test/</I><br />
+    enter the complete directory path for the testset2 <I>path_to_GMM/2nd_test/</I><br />
+
+- Test the model:<br />
+    python3 GMM_test.py <br />
+    <br />
+    enter the complete directory path <I>path_to_GMM/1st_test/</I><br />
+    enter the folder name <I>1st_test/</I><br />
 
 ![Figure 6](./images/GMM/testset2_figure.jpg)  
  *Figure 6. Predicted last 100 labels for testset2, for all four bearings using the GMM clustering*
